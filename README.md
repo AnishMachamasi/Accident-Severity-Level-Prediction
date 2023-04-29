@@ -1,13 +1,14 @@
-# Accident Severity Level Prediction
+### Accident Severity Level Prediction
 
 In this project, we will build a XGBoost model to predict the severity of an accident given various conditions.
 
-# Running this project:
+### Running this project:
 `python app.py`
 
-Dataset used: https://www.kaggle.com/datasets/sobhanmoosavi/us-accidents?utm_medium=social&utm_campaign=kaggle-dataset-share&utm_source=twitter 
+### Dataset used:
+https://www.kaggle.com/datasets/sobhanmoosavi/us-accidents?utm_medium=social&utm_campaign=kaggle-dataset-share&utm_source=twitter 
 
-# demo:
+### demo:
 
 
 
