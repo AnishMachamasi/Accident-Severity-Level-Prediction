@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+	<title>Severity Prediction</title>
+
+</head>
+<body>
+    <nav>
+		<div class="navbar-left">
+			<h1>Accident Severity Prediction</h1>
+		</div>
+		<div class="navbar-right">
+
+		</div>
+	</nav>
+
+	<div class="container">
+		<h2>Predict Accident Severity</h2>
+		<form action="/predict" method="post">
+			<div class="feature-box-grid">
+
+				<div class="feature-box">
+					<label for="City">City:</label>
+					<select id="City" name="City" required>
+						<option value="">--Select a city--</option>
+						<option value="Tucson">Tucson</option>
+						<option value="North Ridgeville">North Ridgeville</option>
+						<option value="Phoenix">Phoenix</option>
+						<option value="Asheville">Asheville</option>
+						<option value="Gansevoort">Gansevoort</option>
+						<option value="El Paso">El Paso</option>
+						<option value="Hillsboro">Hillsboro</option>
+						<option value="Napa">Napa</option>
+						<option value="Orlando">Orlando</option>
+						<option value="Mechanicsville">Mechanicsville</option>
+						<option value="Memphis">Memphis</option>
+						<option value="Tulsa">Tulsa</option>
+						<option value="Durham">Durham</option>
+						<option value="Riceboro">Riceboro</option>
+						<option value="Richmond">Richmond</option>
+					</select>
+					<input type="text" id="OtherCity" name="OtherCity" placeholder="Enter a city">
+				  </div>
+
+				<div class="feature-box">
+					<label for="Distance">Distance (mi):</label>
+					<input type="number" id="Distance" name="Distance" required>
+				</div>
+				<div class="feature-box">
+					<label for="Month">Month:</label>
+					<input type="number" name="Month" min="1" max="12" required>
+				</div>
+				<div class="feature-box">
+					<label for="Precipitation">Precipitation (in):</label>
+					<input type="number" name="Precipitation" step="0.01" required>
+				</div>
+				<div class="feature-box">
+					<label for="Crossing">Crossing:</label>
+					<input type="checkbox" name="Crossing" id="Crossing">
+				</div>
+				<div class="feature-box">
+					<label for="Traffic_Signal">Traffic Signal:</label>
+					<input type="checkbox" name="Crossing" id="Crossing">
+				</div>
+				<div class="feature-box">
+					<label for="Start_Lng">Start Longitude:</label>
+					<input type="number" name="Start_Lng" step="0.0001" required>
+				</div>
+				<div class="feature-box">
+					<label for="Start_Lat">Start Latitude:</label>
+					<input type="number" name="Start_Lat" step="0.0001" required>
+				</div>
+				<div class="feature-box">
+					<label for="Junction">Junction:</label>
+					<input type="checkbox" name="Crossing" id="Crossing">
+				</div>
+				<div class="feature-box">
+					<label for="Stop">Stop:</label>
+					<input type="checkbox" name="Crossing" id="Crossing">
+				</div>
+				<div class="feature-box">
+					<label for="Hour">Hour:</label>
+					<input type="number" name="Hour" min="0" max="23" required>
+				</div>
+				<div class="feature-box">
+					<label for="Pressure">Pressure (in):</label>
+					<input type="number" id="Pressure" name="Pressure" required>
+				</div>
+				<div class="feature-box">
+					<label for="Weekday">Weekday:</label>
+					<select name="Weekday">
+						<option value="0">Monday</option>
+						<option value="1">Tuesday</option>
+						<option value="2">Wednesday</option>
+						<option value="3">Thursday</option>
+						<option value="4">Friday</option>
+						<option value="5">Saturday</option>
+						<option value="6">Sunday</option>
+					</select>
+				</div>
+				<div class="feature-box">
+					<label for="Weekday">Station:</label>
+					<input type="checkbox" name="Station" id="Station">
+				</div>
+
+				<div class="feature-box">
+					<label for="Weather_Condition">Weather Condition:</label>
+					<select name="Weather_Condition">
+						<option value="Cloudy">Cloudy</option>
+						<option value="Fog">Fog</option>
+						<option value="Hail">Hail</option>
+						<option value="Rain">Rain</option>
+						<option value="Sand">Sand</option>
+						<option value="Smoke">Smoke</option>
+						<option value="Snow">Snow</option>
+						<option value="Thunderstorm">Thunderstorm</option>
+						<option value="Windy">Windy</option>
+					</select>
+				</div>
+
+				<div class="feature-box">
+					<label for="Amenity">Amenity:</label>
+					<input type="checkbox" name="Crossing" id="Crossing">
+				</div>
+
+				<div class="feature-box">
+					<label for="Humidity">Humidity(%):</label>
+					<input type="number" id="Humidity" name="Humidity" required>
+				</div>
+			</div>
+			<input type="submit" value="Predict">
+			<div class="prediction">
+				{% if prediction %}
+					<p>Severity Level: {{ prediction + 1 }}</p>
+				{% endif %}
+			</div>
+		</form>
+	</div>
+</body>
+</html>

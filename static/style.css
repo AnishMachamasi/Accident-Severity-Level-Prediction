@@ -1,0 +1,215 @@
+body{
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Style the header */
+h1 {
+    text-align: center;
+    font-size: 36px;
+    color: #333;
+    margin-top: 50px;
+  }
+  
+  /* Style the form */
+  form {
+    max-width: 5000px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 2px 2px #ccc;
+  }
+  
+  label {
+    display: block;
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+  }
+  
+  input[type="submit"] {
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #555;
+  }
+
+  input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+  }
+
+  nav h1 {
+    margin: 0;
+    color: #fff;
+  }
+  
+  .navbar-right a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+  }
+  
+  .navbar-right a:hover {
+    text-decoration: underline;
+  }
+  
+  .navbar-left h1 {
+    margin: 0;
+  }
+  
+  .navbar-right a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+  }
+  
+  .navbar-right a:hover {
+    text-decoration: underline;
+  }
+  
+
+
+  /* feature box */
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+  
+  .feature-box-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+  }
+  
+  .feature-box {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 2px 2px #ccc;
+  }
+  
+  .feature-box label {
+    display: block;
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .feature-box input[type="text"] {
+    width: 90%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+  
+  .navbar-left h1 {
+    margin: 0;
+  }
+  
+  .navbar-right a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+  }
+  
+  .navbar-right a:hover {
+    text-decoration: underline;
+  }
+  
+
+  label[for] {
+    display: block;
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  select[name] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 2px 2px #ccc;
+  }
+  
+  select[name="Crossing"] option {
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  .prediction {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    font-size: 48px;
+    font-weight: bold;
+    background-color: #f2f2f2;
+    border-radius: 20px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  .prediction p {
+    margin: 0;
+  }
