@@ -61,7 +61,7 @@ def predict():
     df = pd.DataFrame(data_dict)
     
     # List of weather conditions
-    weather_conditions = ['Cloudy', 'Fog', 'Hail', 'Rain', 'Sand', 'Smoke', 'Snow', 'Thunderstorm', 'Windy']
+    weather_conditions = ['Clear', 'Cloudy', 'Fog', 'Hail', 'Rain', 'Sand', 'Smoke', 'Snow', 'Thunderstorm', 'Windy']
 
     # Append columns with initial value of 0
     for condition in weather_conditions:
@@ -72,6 +72,13 @@ def predict():
     # Append the city names as columns with initial value 0
     for city in cities:
         df[city] = 0
+        
+    # Set value of 1 in the 'Weather_Condition_{condition}' column if 'Weather_Condition' matches the condition
+    for condition in weather_conditions:
+        if df['Weather_Condition'].values[0] == condition:
+            df[f'Weather_Condition_{condition}'] = 1
+
+    df = df.drop('Weather_Condition', axis=1)
     
     rus_dfp = pd.read_csv('rus_df2.csv')
 
@@ -87,18 +94,6 @@ def predict():
         rus_dfp1[cat] = rus_dfp1[cat].astype("category")
 
     rus_dfp1 = rus_dfp1.replace([True, False], [1, 0])
-
-
-
-    onehot_cols = categorical_features - set(["City"])
-    rus_dfp1 = pd.get_dummies(rus_dfp1, columns=onehot_cols, drop_first=True)
-    input_weather = df.loc[0, 'Weather_Condition']
-    weather_col = 'Weather_Condition_' + input_weather
-    weather_name = 'Weather_Condition_' + input_weather
-    weather_encoded = rus_dfp1.loc[:, weather_col]
-    df[weather_name] = weather_encoded
-    df = df.drop('Weather_Condition', axis=1)
-
 
     binary_encoder = ce.binary.BinaryEncoder()
     city_binary_enc = binary_encoder.fit_transform(rus_dfp1["City"])
